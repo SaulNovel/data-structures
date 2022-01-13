@@ -20,7 +20,6 @@ public:
         std::list<Item>& list = table_[index];
         // List empty -> insert item
         if (list.empty()) {
-            std::cout << "List empty inserting {" << key << "," << value << "}" << std::endl;
             list.push_back({key, value});
             return;
         }
@@ -28,15 +27,12 @@ public:
         for (Item& item : list) {
             if (item.first == key) {
                 item.second = value;
-                std::cout << "key '" << key << "' found, updating value to '" << value << "'" << std::endl;
                 return;
             }
         }
 
         // List not empty & key not found -> insert item
-        list.push_back({key, value});
-        std::cout << "List not empty inserting {" << key << "," << value << "}, in next place" << std::endl;
-        
+        list.push_back({key, value});        
     }
 
     std::pair<T1, T2> remove(const T1& key) {
@@ -51,10 +47,8 @@ public:
                 return itemCopy;
             }
         }
-        // Throw element not found?
-        std::cout << "Element with key '" << key << "' not found" << std::endl;
-
-        return {T1(), T2()};
+        std::string msg = "Element with key '" + std::to_string(key) + "' not found";
+        throw std::runtime_error(msg);
     }
 
     T2 operator[](const T1& key) {
