@@ -103,8 +103,6 @@ void mergeSort_test() {
 
 void quickSort_test() {
     std::vector<int> numbers = {99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0};
-    //std::vector<int> numbers = {10, 80, 30, 90, 40, 90, 70};
-
     printArr(numbers.data(), numbers.size(), false);
 
     QuickSort::QuickSort<int> quickSort;
@@ -116,10 +114,10 @@ void quickSort_test() {
 
 
 void test() {
-    //bubbleSort_test();
-    //selectionSort_test();
-    //insertionSort_test();
-    //mergeSort_test();
+    bubbleSort_test();
+    selectionSort_test();
+    insertionSort_test();
+    mergeSort_test();
     quickSort_test();
 }
 
