@@ -103,6 +103,7 @@ void mergeSort_test() {
 
 void quickSort_test() {
     std::vector<int> numbers = {99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0};
+    
     printArr(numbers.data(), numbers.size(), false);
 
     QuickSort::QuickSort<int> quickSort;
