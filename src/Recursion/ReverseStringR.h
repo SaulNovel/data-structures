@@ -47,9 +47,10 @@ private:
         }
 
         reversedStr_.push_back(str[index--]);
-        // Tail call optimization 
-        // - Only one recursive call
-        // - Nothing done after the recursive call
+        /** Tail call optimization
+         *  - Only one recursive call
+         *  - Nothing done after the recursive call
+        */
         reverse2_helper(str, index);
     }
 
