@@ -1,4 +1,4 @@
-set(BINARY dataStructures_algoritms)
+set(BINARY data-structures)
 
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
 

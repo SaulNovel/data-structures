@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm -v -r ${workspaceRoot}/build",
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "clear; mkdir build; cd ${workspaceRoot}/build; cmake -DCMAKE_BUILD_TYPE=Debug ..; make",
+        },
+        {
+            "label": "debug",
+            "type": "shell",
+            "command": "gdb ${workspaceRoot}/build/src/data-structures_run",
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "${workspaceRoot}/build/src/data-structures_run",
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "clean_build_compile",
+            "dependsOn": [
+                "clean",
+                "run"
+            ],
+            "problemMatcher": []
+        }
+
+    ]
+}

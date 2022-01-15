@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(DataStructures_Algorithms)
+project(data-structures)
 
 SET(GCC_COVERAGE_COMPILE_FLAGS "-fpermissive -Wno-deprecated-declarations -m64 -fexceptions -g -fPIC -g -Wall -Wno-long-long -Wconversion -Wwrite-strings -Wsign-compare")
 
