@@ -41,7 +41,6 @@ private:
     std::vector<char> reversedStr_;
 
     void reverse2_helper(const std::string& str, int index) {
-        // Not tail call optimization
         if (index < 1) {
             reversedStr_.push_back(str[0]);
             return;
