@@ -21,9 +21,27 @@
             "problemMatcher": []
         },
         {
+            "label": "debug_test",
+            "type": "shell",
+            "command": "gdb ${workspaceRoot}/build/test/data-structures_test",
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "run",
             "type": "shell",
             "command": "${workspaceRoot}/build/src/data-structures_run",
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "run_test",
+            "type": "shell",
+            "command": "${workspaceRoot}/build/test/data-structures_test",
             "dependsOn": [
                 "build"
             ],

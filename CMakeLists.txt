@@ -8,5 +8,8 @@ set(CMAKE_CXX_STANDAR 11)
 add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
 
 include_directories(src)
+include_directories(test)
 
 add_subdirectory(src)
+add_subdirectory(test)
+add_subdirectory(lib/googletest)
