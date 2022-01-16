@@ -28,8 +28,6 @@ Rule of 5:
 
 */
 
-
-
 template<typename Vector>
 class VectorIterator
 {

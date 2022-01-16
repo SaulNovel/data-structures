@@ -43,7 +43,8 @@ std::ostream& operator<<(std::ostream& os, const Point& point)
 template <typename T>
 const T getValue()
 {
-    return static_cast<T>(rand()) / static_cast<T>(RAND_MAX);
+    int val = rand() / RAND_MAX;
+    return static_cast<T>(val);
 }
 
 template <>
@@ -319,6 +320,7 @@ TYPED_TEST(VectorScalarTypesTest, Element_access)
 
     try {
         TypeParam val = temp.at(size);
+        static_cast<void>(val);
         throw;
     }
     catch(std::out_of_range const & err) {
@@ -330,6 +332,7 @@ TYPED_TEST(VectorScalarTypesTest, Element_access)
 
     try {
         TypeParam val = tempConst.at(size);
+        static_cast<void>(val);
         throw;
     }
     catch(std::out_of_range const & err) {
