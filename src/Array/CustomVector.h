@@ -1,3 +1,6 @@
+#ifndef CUSTOM_VECTOR
+#define CUSTOM_VECTOR
+
 #include <cstddef>
 #include <algorithm>
 #include <iostream>
@@ -470,3 +473,5 @@ private:
     }
 
 };
+
+#endif

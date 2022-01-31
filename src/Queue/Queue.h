@@ -1,3 +1,6 @@
+#ifndef QUEUE 
+#define QUEUE 
+
 namespace Queue
 {
 
@@ -127,4 +130,5 @@ private:
 
 }
 
+#endif
 

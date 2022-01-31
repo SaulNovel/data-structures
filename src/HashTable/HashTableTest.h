@@ -1,5 +1,5 @@
-#include <HashtableExercises/HashTable.h>
-#include <HashtableExercises/FirstRecurringCharacter.h>
+#include <Hashtable/HashTable.h>
+#include <Hashtable/FirstRecurringCharacter.h>
 
 #include <iostream>
 

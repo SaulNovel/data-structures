@@ -1,5 +1,5 @@
-#ifndef __BINARY_SEARCH_TREE__   // if x.h hasn't been included yet...
-#define __BINARY_SEARCH_TREE__   //   #define this so the compiler knows it has been included
+#ifndef BINARY_SEARCH_TREE  // if x.h hasn't been included yet...
+#define BINARY_SEARCH_TREE   //   #define this so the compiler knows it has been included
 
 #include <string>
 #include <vector>

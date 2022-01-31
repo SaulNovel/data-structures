@@ -1,3 +1,6 @@
+#ifndef HASH_TABLE
+#define HASH_TABLE
+
 #include <utility>
 #include <list>
 #include <assert.h>
@@ -119,4 +122,4 @@ private:
 
 }
 
-
+#endif

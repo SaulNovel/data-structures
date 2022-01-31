@@ -1,4 +1,4 @@
-#include <GraphExercises/Graph.h>
+#include <Graph/Graph.h>
 
 #include <string>
 

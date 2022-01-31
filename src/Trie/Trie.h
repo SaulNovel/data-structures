@@ -1,3 +1,6 @@
+#ifndef TRIE 
+#define TRIE 
+
 #include <string>
 #include <unordered_map>
 
@@ -95,3 +98,5 @@ public:
         return startsWith(prefix, 0, root_);
     }
 };
+
+#endif

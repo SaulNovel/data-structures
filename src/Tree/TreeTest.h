@@ -1,4 +1,4 @@
-#include <TreeExercises/BinarySearchTree.h>
+#include <Tree/BinarySearchTree.h>
 
 #include <string>
 

@@ -1,5 +1,5 @@
-#include <LinkedListExercises/LinkedList.h>
-#include <LinkedListExercises/DoubleLinkedList.h>
+#include <LinkedList/LinkedList.h>
+#include <LinkedList/DoubleLinkedList.h>
 
 #include <string>
 

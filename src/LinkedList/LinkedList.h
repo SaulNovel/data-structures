@@ -1,3 +1,5 @@
+#ifndef LINKED_LIST
+#define LINKED_LIST
 
 namespace LinkedList
 {
@@ -249,5 +251,7 @@ private:
 };
 
 }
+
+#endif
 
 

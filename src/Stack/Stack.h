@@ -1,3 +1,6 @@
+#ifndef STACK
+#define STACK
+
 namespace Stack
 {
 
@@ -188,4 +191,4 @@ private:
 
 }
 
-
+#endif

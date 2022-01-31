@@ -1,6 +1,5 @@
-#include <StacksAndQueues/Stack.h>
-#include <StacksAndQueues/Queue.h>
-#include <StacksAndQueues/QueueUsingStacks.h>
+#include <Stack/Stack.h>
+#include <Queue/Queue.h>
 
 #include <string>
 #include <type_traits>
@@ -9,7 +8,6 @@ namespace StacksAndQueuesTest
 {
 
 using Queue::Queue;
-using QueueUsingStacks::MyQueue;
 
 template<typename ContainerType>
 void printLastItem(const ContainerType& container) {
@@ -93,41 +91,10 @@ void queue_test() {
     queue_APITest(queue);
 }
 
-void queueUsingStacks_test() {
-    MyQueue<std::string> queue;
-
-    queue.pop();
-
-    std::cout << "first element: " << queue.peek() << std::endl;
-
-    queue.push("Joy");
-    queue.push("Matt");
-    queue.push("Pavel");
-    queue.push("Samir");
-
-    queue.print();
-
-    std::cout << "first element: " << queue.peek() << std::endl;
-
-    queue.pop();
-    queue.pop();
-    queue.pop();
-    queue.pop();
-
-    std::cout << "Queue after popping 2 elements: " << std::endl;
-
-    queue.print();
-
-    std::cout << "first element: " << queue.peek() << std::endl;
-
-}
-
 void test() {
 
     //stack_test();
     //queue_test();
-
-    queueUsingStacks_test();
 
 }
 

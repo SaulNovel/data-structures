@@ -1,3 +1,6 @@
+#ifndef GRAPH
+#define GRAPH
+
 #include <iostream>
 
 #include <unordered_map>
@@ -110,3 +113,5 @@ private:
 
 
 }
+
+#endif
