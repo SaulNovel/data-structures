@@ -7,12 +7,14 @@
 #include <sstream>
 #include <queue>
 #include <vector>
+#include <unordered_set>
 #include <algorithm>
 
 using std::list;
 using std::ostream;
 using std::queue;
 using std::vector;
+using std::unordered_set;
 
 namespace Graph_AdjacencyList
 {
@@ -149,12 +151,69 @@ public:
             path.push_back(temp);
             while (temp != source) {
                 temp = parent[temp];
-                path.push_back(temp);
+                if (temp != -1) {
+                    path.push_back(temp);
+                    std::cout << "temp: " << temp << std::endl;
+                }
             }
         }
         std::reverse(path.begin(), path.end());
 
         return path;
+    }
+    
+    void DFS(vector<int>& out, unordered_set<int>& seen, int current) {
+        seen.insert(current);
+        
+        out.push_back(current);
+        for (int node : l[current]) {
+            if (!seen.count(node)) {
+                DFS(out, seen, node);
+            }
+        }
+    }
+
+    vector<int> DFS(int source) {
+        vector<int> result;
+        unordered_set<int> seen;
+        
+        DFS(result, seen, source);
+
+        return result;
+    }
+
+    bool backEdge(int current, unordered_set<int>& seen, unordered_set<int>& localStack) {
+    
+        // Node seen and on stack
+        seen.insert(current);
+        localStack.insert(current);
+    
+        for (int node : l[current]) {
+        
+            // Immediate Back edge
+            if (localStack.count(node)) {
+                return true;
+            }
+        
+            if (!seen.count(node)) {
+                if (backEdge(node, seen, localStack)) {
+                    return true;
+                }   
+            }
+        }
+    
+        // Take current out from stack
+        localStack.erase(current);
+    
+        return false;
+    }
+
+    // TODO: separate logic directed/unircted graph cycle detection
+    bool cycle() {
+        unordered_set<int> seen;
+        unordered_set<int> localStack;
+    
+        return backEdge(l->front(), seen, localStack);
     }
 
 };
@@ -174,7 +233,7 @@ void test() {
     std::cout << graph << std::endl;
 }
 
-void BFS() {
+void test_traversals() {
     Graph graph(7);
     graph.addEdge(1,2);  
     graph.addEdge(1,0);  
@@ -187,13 +246,12 @@ void BFS() {
 
     std::cout << graph << std::endl;
 
-    const auto result = graph.BFS(graph.get()[0].front());
+    const auto result_BFS = graph.BFS(graph.get()[0].front());
     std::cout << "BFS -> ";
-    for (int node : result) {
+    for (int node : result_BFS) {
         std::cout << node << ", ";
     }
     std::cout << std::endl;
-
 
     // BFS is helpful calculating shortest path in undirected graphs
     const auto distances = graph.distances(graph.get()[0].front());
@@ -206,22 +264,39 @@ void BFS() {
     int target = 1;
     std::cout << "Path from '" << source << "' to '" << target << "' -> ";
     const auto& path = graph.path(source, target);
+    std::cout << "size: " << path.size() << std::endl;
     for (int node : path) {
         std::cout << node << " ";
     }
     std::cout << std::endl;
 
-}
-
-void DFS() {
-
-}
-
-
-void DFS_test() {
+    std::cout << "DFS -> ";
+    const auto result_DFS = graph.DFS(graph.get()[0].front());
+    for (int node : result_DFS) {
+        std::cout << node << ", ";
+    }
+    std::cout << std::endl;
 
 }
 
+
+void test_cycle_directedGraph() {
+
+    Graph graph(6);
+    graph.addEdge(1, 2, false);  
+    graph.addEdge(2, 3, false);  
+    graph.addEdge(0, 1, false);  
+    graph.addEdge(0, 4, false);  
+    graph.addEdge(0, 5, false);  
+    graph.addEdge(5, 4, false);  
+
+    std::cout << "Directed graph (no cycle) contains cycle: " << graph.cycle() << std::endl;
+
+    graph.addEdge(3, 0, false);
+
+    std::cout << "Directed graph (cycle) contains cycle: " << graph.cycle() << std::endl;
+
+}
 
 }
 

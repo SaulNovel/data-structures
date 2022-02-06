@@ -7,6 +7,8 @@
         "functional": "cpp",
         "tuple": "cpp",
         "utility": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     }
 }

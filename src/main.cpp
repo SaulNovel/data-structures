@@ -7,7 +7,10 @@
 #include <Stack/Stack.h>
 #include <Tree/BinarySearchTree.h>
 
+#include <Graph/AdjacencyList.h>
+
 int main()
 {
+    Graph_AdjacencyList::test_cycle_directedGraph();
     return 0;
 }
