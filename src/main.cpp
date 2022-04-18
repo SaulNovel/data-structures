@@ -6,6 +6,7 @@
 #include <Queue/Queue.h>
 #include <Stack/Stack.h>
 #include <Tree/BinarySearchTree.h>
+#include <RingBuffer/Ring.h>
 
 #include <Graph/AdjacencyList.h>
 
